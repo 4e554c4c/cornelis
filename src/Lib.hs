@@ -206,6 +206,7 @@ cornelis = do
         , $(command "CornelisLoad"             'doLoad)             [CmdSync Async]
         , $(command "CornelisGoals"            'doAllGoals)         [CmdSync Async]
         , $(command "CornelisSolve"            'solveOne)           [CmdSync Async, rw_complete]
+        , $(command "CornelisShowConstraints"  'doShowConstraints)  [CmdSync Async]
         , $(command "CornelisAuto"             'autoOne)            [CmdSync Async, rw_complete]
         , $(command "CornelisTypeInfer"        'doTypeInfer)        [CmdSync Async]
         , $(command "CornelisTypeContext"      'typeContext)        [CmdSync Async, rw_complete]

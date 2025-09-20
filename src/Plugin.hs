@@ -163,6 +163,9 @@ autoOne _ ms = withNormalizationMode ms $ \mode ->
         (mkAbsPathRnage fp $ ip_interval' ip)
         (T.unpack t)
 
+doShowConstraints :: CommandArguments -> Neovim CornelisEnv ()
+doShowConstraints _ = withAgda $ runInteraction Cmd_constraints
+
 withNormalizationMode :: Maybe String -> (Rewrite -> Neovim CornelisEnv ()) -> Neovim CornelisEnv ()
 withNormalizationMode Nothing f = normalizationMode >>= f
 withNormalizationMode (Just s) f =

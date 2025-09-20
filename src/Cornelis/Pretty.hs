@@ -164,6 +164,7 @@ prettyGoals (GoalSpecific _ scoped ty mhave mboundary mconstraints) =
     ] <>
     [ section "Constraints" (fromMaybe [] mconstraints) pretty
     ]
+--prettyGoals (Constraints mconstraints) = section "Constraints" (fromMaybe [] mconstraints) pretty
 prettyGoals (HelperFunction sig) =
   section "Helper Function"
     [ mempty
@@ -182,6 +183,7 @@ prettyGoals (IntroConstructorUnknown constructors) = vsep
   , section "Constructors available" constructors prettyName
   ]
 prettyGoals (UnknownDisplayInfo v) = annotate CornelisError $ pretty $ show v
+prettyGoals (Version v) = annotate CornelisError $ pretty $ show v
 
 prettyInterval :: AgdaInterval -> Doc HighlightGroup
 prettyInterval (Interval s e)
